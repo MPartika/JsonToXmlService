@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlService.Web", "JsonToXmlService.Web\JsonToXmlService.Web.csproj", "{4B79AAD3-BE19-48FF-A543-6D7AB196CC21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlService.ApplicationCore", "JsonToXmlService.ApplicationCore\JsonToXmlService.ApplicationCore.csproj", "{396D1130-E8B1-4D89-B194-19B8162C654F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlService.Domain", "JsonToXmlService.Domain\JsonToXmlService.Domain.csproj", "{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{4B79AAD3-BE19-48FF-A543-6D7AB196CC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B79AAD3-BE19-48FF-A543-6D7AB196CC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B79AAD3-BE19-48FF-A543-6D7AB196CC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{396D1130-E8B1-4D89-B194-19B8162C654F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{396D1130-E8B1-4D89-B194-19B8162C654F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{396D1130-E8B1-4D89-B194-19B8162C654F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{396D1130-E8B1-4D89-B194-19B8162C654F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
