@@ -15,6 +15,6 @@ public class GetXmlDocumentHandler : IRequestHandler<GetXmlDocumentQuery, Docume
 
     public async Task<DocumentDto> Handle(GetXmlDocumentQuery request, CancellationToken cancellationToken)
     {
-        return await _repository.GetJson(request.DocumentId) ?? new DocumentDto{ Data = new DocumentData()};
+        return await _repository.GetDocumentAsync(request.DocumentId) ?? new DocumentDto{ Data = new DocumentData()};
     }
 }

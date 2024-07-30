@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JsonToXmlService.Infrastructure.Repositories;
 
-public class JsonToXmlRepository : IDocumentRepository
+public class DocumentRepository : IDocumentRepository
 {
     private readonly DocumentDbContext _dbContext;
 
-    public JsonToXmlRepository(DocumentDbContext dbContext)
+    public DocumentRepository(DocumentDbContext dbContext)
     {
         _dbContext = dbContext;
     }
@@ -34,7 +34,7 @@ public class JsonToXmlRepository : IDocumentRepository
         await _dbContext.SaveChangesAsync();        
     }
 
-    public async Task<DocumentDto?> GetJson(int documentId)
+    public async Task<DocumentDto?> GetDocumentAsync(int documentId)
     {
         var document = await _dbContext.Documents.SingleOrDefaultAsync(x => x.Id == documentId);
         if (document == null)

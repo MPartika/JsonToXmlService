@@ -15,6 +15,6 @@ public class ChangeDocumentHandler : IRequestHandler<ChangeDocumentCommand>
 
     public async Task Handle(ChangeDocumentCommand request, CancellationToken cancellationToken)
     {
-        await _repository.ChangeDocumentAsync(request.Id, request);
+        await _repository.ChangeDocumentAsync(request.DocumentId, request);
     }
 }

@@ -11,6 +11,17 @@ public class DocumentDbContext : DbContext
 
     public DbSet<Document> Documents { get; set; }
 
+    public DocumentDbContext()
+    {
+    }
+
+    // Fot Testing
+    public DocumentDbContext(string dbPath)
+    {
+        _dbPath = Path.Join(GetPath, dbPath);
+        
+    }
+
     protected override void OnConfiguring(DbContextOptionsBuilder options)
        => options.UseSqlite($"Data Source={_dbPath}")
            .LogTo(Log.Information, LogLevel.Information);
