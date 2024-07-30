@@ -79,6 +79,8 @@ public static class ConverterEndpoints
     /// </remarks>
     public static async Task<IResult> ChangeJsonDocument(IMediator mediator, int id, [FromBody] ChangeDocumentCommand command)
     {
+        command.Id = id;
+        await mediator.Send(command);
         return Results.Ok();
     }
 }

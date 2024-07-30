@@ -65,7 +65,7 @@ app.MapConverterEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<JsonToXmlDbContext>();
+    var db = scope.ServiceProvider.GetRequiredService<DocumentDbContext>();
 
     db.Database.Migrate();
 }

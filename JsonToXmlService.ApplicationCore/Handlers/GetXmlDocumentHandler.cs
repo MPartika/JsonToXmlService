@@ -6,9 +6,9 @@ namespace JsonToXmlService.ApplicationCore.Handlers;
 
 public class GetXmlDocumentHandler : IRequestHandler<GetXmlDocumentQuery, DocumentDto>
 {
-    private readonly IJsonToXmlRepository _repository;
+    private readonly IDocumentRepository _repository;
 
-    public GetXmlDocumentHandler(IJsonToXmlRepository repository)
+    public GetXmlDocumentHandler(IDocumentRepository repository)
     {
         _repository = repository;
     }

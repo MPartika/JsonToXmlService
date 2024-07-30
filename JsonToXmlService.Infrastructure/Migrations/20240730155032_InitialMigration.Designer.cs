@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JsonToXmlService.Infrastructure.Migrations
 {
-    [DbContext(typeof(JsonToXmlDbContext))]
+    [DbContext(typeof(DocumentDbContext))]
     [Migration("20240730155032_InitialMigration")]
     partial class InitialMigration
     {

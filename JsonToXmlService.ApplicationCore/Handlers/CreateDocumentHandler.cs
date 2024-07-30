@@ -6,15 +6,15 @@ namespace JsonToXmlService.ApplicationCore.Handlers;
 
 public class CreateDocumentHandler : IRequestHandler<CreateDocumentCommand, int>
 {
-    private readonly IJsonToXmlRepository _repository;
+    private readonly IDocumentRepository _repository;
 
-    public CreateDocumentHandler(IJsonToXmlRepository repository)
+    public CreateDocumentHandler(IDocumentRepository repository)
     {
         _repository = repository;
     }
 
     public async Task<int> Handle(CreateDocumentCommand request, CancellationToken cancellationToken)
     {
-        return await _repository.SaveJsonAsync(request);        
+        return await _repository.SaveDocumentAsync(request);        
     }
 }

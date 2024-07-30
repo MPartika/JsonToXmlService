@@ -5,9 +5,9 @@ using Serilog;
 
 namespace JsonToXmlService.Infrastructure;
 
-public class JsonToXmlDbContext : DbContext
+public class DocumentDbContext : DbContext
 {
-    private readonly string _dbPath = Path.Join(GetPath, "Random.db");
+    private readonly string _dbPath = Path.Join(GetPath, "Document.db");
 
     public DbSet<Document> Documents { get; set; }
 

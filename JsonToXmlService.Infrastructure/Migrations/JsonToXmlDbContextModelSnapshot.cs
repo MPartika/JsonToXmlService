@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JsonToXmlService.Infrastructure.Migrations
 {
-    [DbContext(typeof(JsonToXmlDbContext))]
+    [DbContext(typeof(DocumentDbContext))]
     partial class JsonToXmlDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

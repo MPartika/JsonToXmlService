@@ -25,7 +25,7 @@ public static class ConfigureServices
 
     public static IServiceCollection AddDatabaseContext(this IServiceCollection services)
     {
-        services.AddDbContext<JsonToXmlDbContext>(ServiceLifetime.Scoped);
+        services.AddDbContext<DocumentDbContext>(ServiceLifetime.Scoped);
         return services;
     }
 }
