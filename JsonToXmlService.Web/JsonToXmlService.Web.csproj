@@ -18,6 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JsonToXmlService.ApplicationCore\JsonToXmlService.ApplicationCore.csproj" />
+    <ProjectReference Include="..\JsonToXmlService.Infrastructure\JsonToXmlService.Infrastructure.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
 </Project>

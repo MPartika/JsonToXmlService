@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlService.Applicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlService.Domain", "JsonToXmlService.Domain\JsonToXmlService.Domain.csproj", "{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToXmlService.Infrastructure", "JsonToXmlService.Infrastructure\JsonToXmlService.Infrastructure.csproj", "{679BDE34-FEFC-401C-A896-63AFC055011C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35EC9CC5-B7B4-489B-A1EB-33D12BB02E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{679BDE34-FEFC-401C-A896-63AFC055011C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679BDE34-FEFC-401C-A896-63AFC055011C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679BDE34-FEFC-401C-A896-63AFC055011C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{679BDE34-FEFC-401C-A896-63AFC055011C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

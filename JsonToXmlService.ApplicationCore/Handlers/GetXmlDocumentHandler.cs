@@ -4,11 +4,17 @@ using MediatR;
 
 namespace JsonToXmlService.ApplicationCore.Handlers;
 
-public class GetXmlDocumentHandler : IRequestHandler<GetXmlDocumentQuery, Document>
+public class GetXmlDocumentHandler : IRequestHandler<GetXmlDocumentQuery, DocumentDto>
 {
-    public async Task<Document> Handle(GetXmlDocumentQuery request, CancellationToken cancellationToken)
+    private readonly IJsonToXmlRepository _repository;
+
+    public GetXmlDocumentHandler(IJsonToXmlRepository repository)
     {
-        await Task.Delay(500);
-        return new Document { Id = 10, Tags = ["important",".net"], Data = new DocumentData("Random Data", "Martin", "Lorem ipsum")};
+        _repository = repository;
+    }
+
+    public async Task<DocumentDto> Handle(GetXmlDocumentQuery request, CancellationToken cancellationToken)
+    {
+        return await _repository.GetJson(request.DocumentId) ?? new DocumentDto{ Data = new DocumentData()};
     }
 }

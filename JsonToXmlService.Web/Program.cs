@@ -1,15 +1,12 @@
 using System.Text;
 using System.Text.Json;
 using JsonToXmlService.ApplicationCore;
-using JsonToXmlService.ApplicationCore.Commands;
-using JsonToXmlService.ApplicationCore.Queries;
-using JsonToXmlService.Domain;
 using JsonToXmlService.Web;
-using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+using JsonToXmlService.Infrastructure;
 using Serilog;
 using Serilog.Events;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
@@ -25,8 +22,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(opts =>
+{
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    opts.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
 builder.Services.AddHandlers();
+builder.Services.AddDatabaseContext();
+builder.Services.AddRepositories();
 
 var app = builder.Build();
 
@@ -58,19 +61,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPost("/documents",  async (IMediator mediator, [FromBody] CreateDocumentCommand command) => {
-    var result = await mediator.Send(command);
-    return result;
-})
-.WithName("SaveJsonDocument")
-.WithOpenApi();
+app.MapConverterEndpoints();
 
-app.MapGet("/documents/{id:int}", async (IMediator mediator, int id) => {
-    var result = await mediator.Send(new GetXmlDocumentQuery(id));
-    return new XmlResult<Document>(result);
-})
-.WithName("GetXMLDocument")
-.WithOpenApi();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<JsonToXmlDbContext>();
+
+    db.Database.Migrate();
+}
 
 app.Run();
 
